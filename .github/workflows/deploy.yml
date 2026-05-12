@@ -19,7 +19,6 @@ jobs:
         node-version: '18'
 
     - name: Install & Build
-      working-directory: ./cloud-assignment
       run: |
         npm install
         npm run build
@@ -33,4 +32,4 @@ jobs:
 
     - name: Deploy to S3
       run: |
-        aws s3 sync cloud-assignment/dist/ s3://paul-cloud-assignment-2026 --delete
+        aws s3 sync dist/ s3://paul-cloud-assignment-2026 --delete
